@@ -121,13 +121,24 @@
 
   /* Gradient text for emphasis words */
   .text-gradient-accent {
-    background-image: linear-gradient(120deg,
+    background-image: linear-gradient(110deg,
       var(--c-accent) 0%,
-      color-mix(in srgb, var(--c-accent) 60%, var(--c-primary)) 60%,
-      var(--c-primary) 100%);
+      color-mix(in srgb, var(--c-accent) 70%, #ffffff) 22%,
+      var(--c-primary) 55%,
+      color-mix(in srgb, var(--c-primary) 65%, #ff7a00) 80%,
+      var(--c-accent-deep) 100%);
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    animation: gradient-shift 9s ease-in-out infinite alternate;
+  }
+  @keyframes gradient-shift {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .text-gradient-accent { animation: none; }
   }
 
   /* Ambient radial blob backdrop for sections */
