@@ -1,0 +1,24 @@
+---
+import { SCREENSHOTS } from '../content/screenshots';
+import ScreenshotCarousel from '../islands/ScreenshotCarousel.svelte';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const slides = SCREENSHOTS.map((s) => ({
+  ...s,
+  src: `${base}/images/screenshots/${s.file}`,
+}));
+---
+<section id="screenshots" class="py-20 sm:py-28">
+  <div class="container-x">
+    <div class="max-w-2xl">
+      <p class="eyebrow">Screenshots</p>
+      <h2 class="display text-3xl sm:text-4xl mt-2">A closer look at Chorder.</h2>
+      <p class="mt-4 text-text/75 text-lg">
+        Eight real screens — performance view, live chord detection, library, setlists, themes, and more.
+      </p>
+    </div>
+    <div class="mt-12">
+      <ScreenshotCarousel client:visible slides={slides} />
+    </div>
+  </div>
+</section>

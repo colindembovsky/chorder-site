@@ -1,0 +1,42 @@
+---
+import { APP_NAME, PLAY_LIVE, PLAY_URL } from '../lib/constants';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<section id="download" class="py-24 sm:py-32" style="background: var(--c-surface);">
+  <div class="container-x text-center">
+    <p class="eyebrow">Get the app</p>
+    <h2 class="display text-3xl sm:text-5xl mt-2 max-w-3xl mx-auto">
+      Ready to make your setlist <span class="accent-underline">yours</span>?
+    </h2>
+    <p class="mt-4 text-text/75 max-w-2xl mx-auto text-lg">
+      {APP_NAME} is launching on Google Play soon. Bookmark this page or check back to grab it on day one.
+    </p>
+
+    <div class="mt-10 flex flex-col items-center gap-6">
+      {PLAY_LIVE ? (
+        <a
+          href={PLAY_URL}
+          aria-label="Get Chorder on Google Play"
+          class="inline-block transition-transform hover:-translate-y-0.5"
+        >
+          <img
+            src={`${base}/images/google-play-badge.svg`}
+            alt="Get it on Google Play"
+            height="64"
+            width="216"
+            class="h-16 w-auto"
+          />
+        </a>
+      ) : (
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-base font-semibold"
+          style="background: var(--c-bg);"
+        >
+          <span class="inline-block h-2 w-2 rounded-full bg-accent animate-pulse"></span>
+          Coming soon to Google Play
+        </span>
+      )}
+    </div>
+  </div>
+</section>

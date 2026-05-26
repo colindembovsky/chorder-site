@@ -1,0 +1,42 @@
+---
+import { FEATURES } from '../content/features';
+
+// Minimal inline SVG icon set (so we don't pull in a library)
+const ICONS: Record<string, string> = {
+  'file-text': '<path d="M14 3v5h5"/><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9l7 7v9a2 2 0 0 1-2 2Z"/><path d="M8 13h8M8 17h6M8 9h3"/>',
+  library: '<path d="M6 4v16"/><path d="M10 4v16"/><rect x="14" y="4" width="6" height="16" rx="1"/>',
+  hash: '<path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/>',
+  'list-ordered': '<path d="M10 6h11M10 12h11M10 18h11"/><path d="M4 6h1v4M4 10h2"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/>',
+  'play-circle': '<circle cx="12" cy="12" r="10"/><path d="M10 8.5 16 12l-6 3.5v-7Z"/>',
+  mic: '<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2"/><path d="M12 19v3"/>',
+};
+---
+<section id="features" class="py-20 sm:py-28">
+  <div class="container-x">
+    <div class="max-w-2xl">
+      <p class="eyebrow">Features</p>
+      <h2 class="display text-3xl sm:text-4xl mt-2">
+        Every chart, every key, every set — <span class="accent-underline">your way</span>.
+      </h2>
+      <p class="mt-4 text-text/75 text-lg">
+        Built for musicians and worship leaders who play live. Fast, focused, and entirely on-device.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {FEATURES.map((f) => (
+        <article class="card group hover:-translate-y-0.5 hover:border-primary/40 transition-all">
+          <div class="flex items-center justify-center h-11 w-11 rounded-xl mb-5"
+               style="background: color-mix(in srgb, var(--c-primary) 18%, transparent); color: var(--c-primary);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="1.8"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                 set:html={ICONS[f.icon] ?? ''} />
+          </div>
+          <h3 class="font-display font-semibold text-lg">{f.title}</h3>
+          <p class="mt-2 text-sm text-text/75 leading-relaxed">{f.blurb}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

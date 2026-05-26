@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+import { APP_NAME, PUBLISHER, SUPPORT_EMAIL } from '../lib/constants';
+---
+<Base
+  title={`Privacy Policy — ${APP_NAME}`}
+  description={`How ${APP_NAME} handles your information. Private by design: no accounts, no ads, no analytics.`}
+>
+  <article class="container-x py-20 prose-chorder">
+    <p class="eyebrow">Legal</p>
+    <h1 class="display text-4xl sm:text-5xl mt-2">Privacy Policy</h1>
+    <p class="text-text/60 mt-3">Effective date: May 26, 2026</p>
+
+    <div class="mt-10 space-y-6 text-text/85 leading-relaxed text-base sm:text-lg">
+      <p>
+        {APP_NAME} is published by {PUBLISHER}. This Privacy Policy explains how {APP_NAME}
+        handles information when you use the app.
+      </p>
+
+      <h2 class="display text-2xl mt-10">Summary</h2>
+      <p>
+        {APP_NAME} is designed to work on your device. The app does not require an account, does
+        not include advertising, does not include analytics, and does not send your imported
+        charts, microphone audio, or app library data to {PUBLISHER} servers.
+      </p>
+
+      <h2 class="display text-2xl mt-10">Information you provide to the app</h2>
+      <p>
+        {APP_NAME} lets you import and manage song charts. Depending on how you use the app,
+        this may include:
+      </p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>PDF files or other chart files you choose to import.</li>
+        <li>Song titles, artists, keys, chords, lyrics, setlists, notes, tags, and edits you create in the app.</li>
+        <li>App preferences such as theme choices and display settings.</li>
+      </ul>
+      <p>
+        This information is stored locally on your device so the app can display, search, edit, and
+        organize your charts.
+      </p>
+
+      <h2 class="display text-2xl mt-10">Microphone access</h2>
+      <p>
+        {APP_NAME} may request microphone access for the experimental chord detection feature.
+      </p>
+      <p>
+        Microphone audio is processed on your device to estimate chords and beat information.
+        {APP_NAME} does not record, save, upload, or share microphone audio with {PUBLISHER}. You
+        can deny microphone permission or stop chord detection at any time.
+      </p>
+
+      <h2 class="display text-2xl mt-10">On-device processing</h2>
+      <p>
+        {APP_NAME} uses on-device processing for features such as PDF import, OCR fallback for
+        scanned charts, chord parsing, Nashville number conversion, transposition, capo display,
+        and chord detection.
+      </p>
+      <p>
+        The app does not use these features to transmit your chart contents or audio to {PUBLISHER}.
+      </p>
+
+      <h2 class="display text-2xl mt-10">Information shared with third parties</h2>
+      <p>
+        {APP_NAME} does not sell your information and does not share your imported charts, app
+        library, notes, or microphone audio with third parties.
+      </p>
+      <p>
+        Some app functionality uses Android platform services and libraries on your device, such as
+        file picking, local storage, and on-device text recognition. Your use of Google Play and
+        Android device services is also subject to Google’s privacy policies and your device
+        settings.
+      </p>
+
+      <h2 class="display text-2xl mt-10">Device backup and transfer</h2>
+      <p>
+        Depending on your Android device settings, app data may be included in Android backup or
+        device-to-device transfer features provided by the operating system. {PUBLISHER} does not
+        control those Android backup services.
+      </p>
+
+      <h2 class="display text-2xl mt-10">Data retention and deletion</h2>
+      <p>
+        Your app data remains on your device until you delete it in the app, clear the app’s data,
+        uninstall the app, or remove files using Android system tools.
+      </p>
+      <p>To delete {APP_NAME} data, you can:</p>
+      <ul class="list-disc pl-6 space-y-1">
+        <li>Delete songs, setlists, notes, tags, or imported charts in the app where supported.</li>
+        <li>Use Android Settings to clear {APP_NAME}’s app data.</li>
+        <li>Uninstall {APP_NAME} from your device.</li>
+      </ul>
+
+      <h2 class="display text-2xl mt-10">Children’s privacy</h2>
+      <p>
+        {APP_NAME} is not directed to children under 13. The app does not knowingly collect
+        personal information from children.
+      </p>
+
+      <h2 class="display text-2xl mt-10">Changes to this policy</h2>
+      <p>
+        {PUBLISHER} may update this Privacy Policy from time to time. Updates will be posted with
+        a new effective date.
+      </p>
+
+      <h2 class="display text-2xl mt-10">Contact</h2>
+      <p>
+        For privacy questions, contact {PUBLISHER} at
+        <a href={`mailto:${SUPPORT_EMAIL}`} class="text-accent hover:underline">{SUPPORT_EMAIL}</a>.
+      </p>
+    </div>
+  </article>
+</Base>

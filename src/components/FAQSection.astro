@@ -1,0 +1,16 @@
+---
+import { FAQS } from '../content/faqs';
+import FAQ from '../islands/FAQ.svelte';
+---
+<section id="faq" class="py-20 sm:py-28 border-t border-border">
+  <div class="container-x grid md:grid-cols-[1fr_1.4fr] gap-12 items-start">
+    <div>
+      <p class="eyebrow">FAQ</p>
+      <h2 class="display text-3xl sm:text-4xl mt-2">Questions, answered.</h2>
+      <p class="mt-4 text-text/75">
+        Anything else? Drop us a line — see the footer.
+      </p>
+    </div>
+    <FAQ client:visible items={FAQS} />
+  </div>
+</section>

@@ -1,0 +1,48 @@
+---
+import { APP_NAME, PLAY_LIVE, PLAY_URL } from '../lib/constants';
+import MobileNav from '../islands/MobileNav.svelte';
+import ThemeToggle from '../islands/ThemeToggle.svelte';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const links = [
+  { href: '#features', label: 'Features' },
+  { href: '#screenshots', label: 'Screenshots' },
+  { href: '#how', label: 'How it works' },
+  { href: '#faq', label: 'FAQ' },
+  { href: `${base}/privacy`, label: 'Privacy' },
+];
+---
+<header class="sticky top-0 z-40 backdrop-blur-md bg-bg/75 border-b border-border">
+  <div class="container-x flex items-center justify-between h-16">
+    <a href={`${base}/`} class="flex items-center gap-2.5 group" aria-label={`${APP_NAME} home`}>
+      <img
+        src={`${base}/images/logo.png`}
+        alt=""
+        width="32"
+        height="32"
+        class="h-8 w-8 rounded-md object-cover"
+        loading="eager"
+        decoding="async"
+      />
+      <span class="font-display font-bold text-lg tracking-tight">{APP_NAME}</span>
+    </a>
+
+    <nav aria-label="Primary" class="hidden md:flex items-center gap-7 text-sm text-text/80">
+      {links.map((l) => (
+        <a href={l.href} class="hover:text-text transition-colors">{l.label}</a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <ThemeToggle client:idle />
+      <a
+        href={PLAY_LIVE ? PLAY_URL : '#download'}
+        class="hidden sm:inline-flex btn btn-accent"
+        aria-disabled={!PLAY_LIVE}
+      >
+        {PLAY_LIVE ? 'Get it on Google Play' : 'Coming soon'}
+      </a>
+      <MobileNav client:idle links={links} />
+    </div>
+  </div>
+</header>

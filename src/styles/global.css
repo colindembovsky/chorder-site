@@ -1,0 +1,121 @@
+/* Tailwind v3 directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme tokens — Midnight Neon (default / dark) */
+:root,
+[data-theme="dark"] {
+  --c-bg:            #121212;
+  --c-surface:       #1E1E1E;
+  --c-surface-2:     #242424;
+  --c-text:          #E0E0E0;
+  --c-muted:         #9aa0a6;
+  --c-primary:       #9FA8DA;
+  --c-primary-deep:  #252C8F;
+  --c-accent:        #00FF66;
+  --c-accent-deep:   #00CC52;
+  --c-cream:         #E0D9C8;
+  --c-ink:           #050505;
+  --c-border:        rgba(255,255,255,0.08);
+  color-scheme: dark;
+}
+
+/* Frosted Slate (light) */
+[data-theme="light"] {
+  --c-bg:            #EDF2F6;
+  --c-surface:       #FAFCFD;
+  --c-surface-2:     #E2E9EF;
+  --c-text:          #2B2B2B;
+  --c-muted:         #5a6470;
+  --c-primary:       #46556a;
+  --c-primary-deep:  #2c3a4d;
+  --c-accent:        #8B4513;
+  --c-accent-deep:   #6d3610;
+  --c-cream:         #6E5849;
+  --c-ink:           #FFFFFF;
+  --c-border:        rgba(0,0,0,0.08);
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    background-color: var(--c-bg);
+    color: var(--c-text);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans bg-bg text-text;
+    min-height: 100vh;
+  }
+  ::selection {
+    background: var(--c-accent);
+    color: #000;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  /* Focus ring */
+  :where(a, button, [role="button"], input, select, textarea):focus-visible {
+    outline: 2px solid var(--c-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-medium
+           transition-all duration-150 px-5 py-2.5 text-sm;
+  }
+  .btn-accent {
+    background: var(--c-accent);
+    color: #000;
+    font-weight: 600;
+  }
+  .btn-accent:hover { background: var(--c-accent-deep); transform: translateY(-1px); }
+
+  .btn-ghost {
+    border: 1px solid var(--c-border);
+    color: var(--c-text);
+    background: transparent;
+  }
+  .btn-ghost:hover { background: var(--c-surface); }
+
+  .card {
+    @apply rounded-2xl p-6;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+  }
+
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.18em] font-semibold;
+    color: var(--c-primary);
+  }
+
+  /* Headline display style — tighter tracking for big type */
+  .display {
+    @apply font-display font-bold tracking-tight;
+    line-height: 1.05;
+  }
+
+  /* Gradient overlay used in the hero (mirrors the in-app splash) */
+  .hero-gradient {
+    background:
+      linear-gradient(180deg,
+        rgba(0,0,0,0.80) 0%,
+        rgba(0,0,0,0.55) 40%,
+        rgba(0,0,0,0.85) 100%);
+  }
+
+  /* Subtle accent underline for in-text highlights */
+  .accent-underline {
+    background-image: linear-gradient(transparent 65%, color-mix(in srgb, var(--c-accent) 40%, transparent) 65%);
+    background-size: 100% 100%;
+  }
+}
