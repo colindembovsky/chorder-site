@@ -11,12 +11,12 @@ const ICONS: Record<string, string> = {
   mic: '<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2"/><path d="M12 19v3"/>',
 };
 ---
-<section id="features" class="py-20 sm:py-28">
+<section id="features" class="py-20 sm:py-28 ambient-section">
   <div class="container-x">
-    <div class="max-w-2xl">
+    <div class="max-w-2xl reveal">
       <p class="eyebrow">Features</p>
       <h2 class="display text-3xl sm:text-4xl mt-2">
-        Every chart, every key, every set — <span class="accent-underline">your way</span>.
+        Every chart, every key, every set — <span class="text-gradient-accent">your way</span>.
       </h2>
       <p class="mt-4 text-text/75 text-lg">
         Built for musicians and worship leaders who play live. Fast, focused, and entirely on-device.
@@ -25,9 +25,9 @@ const ICONS: Record<string, string> = {
 
     <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {FEATURES.map((f) => (
-        <article class="card group hover:-translate-y-0.5 hover:border-primary/40 transition-all">
-          <div class="flex items-center justify-center h-11 w-11 rounded-xl mb-5"
-               style="background: color-mix(in srgb, var(--c-primary) 18%, transparent); color: var(--c-primary);">
+        <article class="card card-glow reveal group hover:-translate-y-0.5 hover:border-primary/40 transition-all">
+          <div class="flex items-center justify-center h-11 w-11 rounded-xl mb-5 transition-transform group-hover:scale-110 group-hover:rotate-3"
+               style="background: color-mix(in srgb, var(--c-primary) 18%, transparent); color: var(--c-primary); box-shadow: 0 0 0 1px color-mix(in srgb, var(--c-primary) 25%, transparent), 0 12px 28px -16px color-mix(in srgb, var(--c-primary) 60%, transparent);">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="1.8"
                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"

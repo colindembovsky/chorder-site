@@ -8,16 +8,16 @@ const slides = SCREENSHOTS.map((s) => ({
   src: `${base}/images/screenshots/${s.file}`,
 }));
 ---
-<section id="screenshots" class="py-20 sm:py-28">
+<section id="screenshots" class="py-20 sm:py-28 ambient-section">
   <div class="container-x">
-    <div class="max-w-2xl">
+    <div class="max-w-2xl reveal">
       <p class="eyebrow">Screenshots</p>
       <h2 class="display text-3xl sm:text-4xl mt-2">A closer look at Chorder.</h2>
       <p class="mt-4 text-text/75 text-lg">
         Performance view, live chord detection (experimental), library, setlists, themes, and more.
       </p>
     </div>
-    <div class="mt-12">
+    <div class="mt-12 reveal">
       <ScreenshotCarousel client:visible slides={slides} />
     </div>
   </div>
