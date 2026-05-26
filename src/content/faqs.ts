@@ -11,11 +11,11 @@ export const FAQS: FAQ[] = [
   },
   {
     q: 'How does PDF import work?',
-    a: 'Pick one or more PDFs and Chorder parses chord and lyric structure into editable charts. Text-based PDFs are read directly; scanned PDFs are processed on-device using Android ML Kit OCR.',
+    a: 'Pick one or more PDFs and Chorder parses them into editable charts. From there you can edit the chart in Chorder — drag chords over lyrics, fix labels, add sections, tweak meta — to make it truly yours.',
   },
   {
-    q: 'How accurate is the OCR for scanned charts?',
-    a: 'On clean, high-resolution scans it works well. Messy scans may need a quick pass through the chart editor — drag chords over lyrics, tweak meta, and you are good to play.',
+    q: 'Can I edit a chart after I import it?',
+    a: 'Yes. Every imported chart is fully editable in Chorder. Reposition chords, adjust lyrics, rename sections, set the key and capo — your changes are saved with the song.',
   },
   {
     q: 'Can I transpose songs and use a capo?',

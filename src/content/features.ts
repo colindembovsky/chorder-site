@@ -6,9 +6,9 @@ export type Feature = {
 
 export const FEATURES: Feature[] = [
   {
-    title: 'PDF Import',
+    title: 'Import & Edit',
     blurb:
-      'Drop in a stack of PDFs. Chorder extracts chords and lyrics — text PDFs natively, scanned PDFs via on-device OCR.',
+      'Drop in PDFs and Chorder turns them into editable charts. Drag chords, fix lyrics, tweak meta — make every chart truly yours.',
     icon: 'file-text',
   },
   {
