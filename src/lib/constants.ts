@@ -2,7 +2,7 @@ export const APP_NAME = 'Chorder';
 export const APP_ID = 'com.ezekielapps.chorder';
 export const APP_TAGLINE = 'Charts and setlists — your way.';
 export const APP_SUBHEAD =
-  'Import song-chart PDFs. Render them as chords or Nashville numbers, transposed and capo-aware. Build setlists. Play live.';
+  'Import song-chart PDFs. Transpose and set capo. View with chords or Nashville numbers. Build setlists. Play live.';
 export const PUBLISHER = 'Ezekiel Apps';
 export const SUPPORT_EMAIL = 'ezekielapps2026@gmail.com';
 

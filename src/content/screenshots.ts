@@ -17,8 +17,8 @@ export const SCREENSHOTS: Screenshot[] = [
   {
     file: 'chorder-detect.png',
     caption:
-      'Never lose your place — live chord detection identifies what you are playing, automatically.',
-    feature: 'Live Chord Detection',
+      'Never lose your place — live chord detection identifies what is being played, automatically.',
+    feature: 'Live Chord Detection (experimental)',
     theme: 'dark',
   },
   {
