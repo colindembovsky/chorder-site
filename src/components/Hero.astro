@@ -3,9 +3,9 @@ import { APP_NAME, APP_TAGLINE, APP_SUBHEAD, PLAY_LIVE, PLAY_URL } from '../lib/
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<section class="relative overflow-hidden">
+<section class="relative isolate overflow-hidden" style="background-color: #0a0a0a;">
   {/* Background: cover photo + dark vertical gradient (mirrors in-app splash) */}
-  <div class="absolute inset-0 -z-10">
+  <div class="absolute inset-0 z-0">
     <img
       src={`${base}/images/cover.png`}
       alt=""
@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <div class="absolute inset-0 hero-gradient"></div>
   </div>
 
-  <div class="container-x relative pt-20 pb-28 sm:pt-28 sm:pb-36 lg:pt-36 lg:pb-44 text-center">
+  <div class="container-x relative z-10 pt-20 pb-28 sm:pt-28 sm:pb-36 lg:pt-36 lg:pb-44 text-center">
     <img
       src={`${base}/images/logo.png`}
       alt=""
