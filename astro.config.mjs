@@ -4,7 +4,7 @@ import svelte from '@astrojs/svelte';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://chorder.kingdomofcode.com',
+  site: 'https://chorder.thekingdomofcode.com',
   trailingSlash: 'ignore',
   integrations: [
     tailwind({ applyBaseStyles: false }),
