@@ -4,11 +4,13 @@ import MobileNav from '../islands/MobileNav.svelte';
 import ThemeToggle from '../islands/ThemeToggle.svelte';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const siteRoot = base ? `${base}/` : '/';
+const sectionHref = (hash) => `${siteRoot}${hash}`;
 const links = [
-  { href: '#features', label: 'Features' },
-  { href: '#screenshots', label: 'Screenshots' },
-  { href: '#how', label: 'How it works' },
-  { href: '#faq', label: 'FAQ' },
+  { href: sectionHref('#features'), label: 'Features' },
+  { href: sectionHref('#screenshots'), label: 'Screenshots' },
+  { href: sectionHref('#how'), label: 'How it works' },
+  { href: sectionHref('#faq'), label: 'FAQ' },
   { href: `${base}/privacy`, label: 'Privacy' },
 ];
 ---
