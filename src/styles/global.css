@@ -40,6 +40,8 @@
 
 @layer base {
   html {
+    width: 100%;
+    overflow-x: clip;
     background-color: var(--c-bg);
     color: var(--c-text);
     -webkit-font-smoothing: antialiased;
@@ -48,7 +50,9 @@
   }
   body {
     @apply font-sans bg-bg text-text;
+    width: 100%;
     min-height: 100vh;
+    overflow-x: clip;
   }
   ::selection {
     background: var(--c-accent);

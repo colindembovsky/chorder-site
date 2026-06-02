@@ -48,6 +48,7 @@
 </script>
 
 <div class="relative">
+  <!-- svelte-ignore a11y_no_noninteractive_tabindex a11y_no_noninteractive_element_interactions -->
   <div
     bind:this={trackEl}
     onscroll={onScroll}

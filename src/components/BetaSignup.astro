@@ -37,28 +37,15 @@ const tallySrc = `https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=
     var iframe = document.querySelector('#beta iframe[data-tally-src]');
     if (!iframe) return;
 
-    // Tally embeds follow the host's CSS `color-scheme` to pick light/dark.
-    // Set it from the site theme BEFORE Tally assigns the iframe src (avoids a
-    // flash), and keep it in sync when the visitor toggles the theme — this
-    // updates the cross-origin form live, with no reload.
-    function syncScheme() {
-      iframe.style.colorScheme =
-        document.documentElement.getAttribute('data-theme') === 'light'
-          ? 'light'
-          : 'dark';
-    }
-    syncScheme();
-
-    new MutationObserver(syncScheme).observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['data-theme'],
-    });
-
     // Load Tally's widget, which sets the iframe src and handles dynamicHeight.
     var w = 'https://tally.so/widgets/embed.js';
+    var setIframeSrc = function () {
+      iframe.src = iframe.dataset.tallySrc;
+    };
     var load = function () {
       if (typeof Tally !== 'undefined') {
         Tally.loadEmbeds();
+        if (!iframe.hasAttribute('src')) setIframeSrc();
         return;
       }
       document
@@ -67,6 +54,41 @@ const tallySrc = `https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=
           e.src = e.dataset.tallySrc;
         });
     };
+
+    // Tally embeds follow the host's CSS `color-scheme`, but the form only
+    // appears to resolve that preference when the iframe loads. Set the scheme
+    // before first load, then reload the iframe when visitors toggle themes.
+    var activeScheme;
+    function getScheme() {
+      return document.documentElement.getAttribute('data-theme') === 'light'
+        ? 'light'
+        : 'dark';
+    }
+    function syncScheme() {
+      activeScheme = getScheme();
+      iframe.style.colorScheme = activeScheme;
+    }
+    function reloadForThemeChange() {
+      var nextScheme = getScheme();
+      if (nextScheme === activeScheme) return;
+      activeScheme = nextScheme;
+      iframe.style.colorScheme = nextScheme;
+      if (!iframe.hasAttribute('src')) return;
+
+      iframe.removeAttribute('src');
+      window.requestAnimationFrame(function () {
+        setIframeSrc();
+        if (typeof Tally !== 'undefined') Tally.loadEmbeds();
+      });
+    }
+
+    syncScheme();
+
+    new MutationObserver(reloadForThemeChange).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme'],
+    });
+
     if (typeof Tally !== 'undefined') {
       load();
     } else if (document.querySelector('script[src="' + w + '"]') == null) {
