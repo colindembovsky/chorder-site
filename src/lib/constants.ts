@@ -13,6 +13,14 @@ export const SUPPORT_EMAIL = 'ezekielapps2026@gmail.com';
 export const PLAY_LIVE = false;
 export const PLAY_URL = `https://play.google.com/store/apps/details?id=${APP_ID}&referrer=utm_source%3Dwebsite%26utm_medium%3Dlanding`;
 
+/**
+ * Beta sign-up (Tally embedded form). Set BETA_SIGNUP_ACTIVE = false to hide
+ * the section. TALLY_FORM_ID is the id from your Tally embed URL
+ * (https://tally.so/embed/<id>).
+ */
+export const BETA_SIGNUP_ACTIVE = true;
+export const TALLY_FORM_ID = 'obvNyN';
+
 export const SITE_DESCRIPTION =
   'Chorder is a native Android tablet app for musicians and worship leaders. Import PDF chord charts, transpose to any key with capo support, switch to Nashville numbers, build setlists, and play live — fully on-device.';
 

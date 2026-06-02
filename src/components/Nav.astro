@@ -1,5 +1,5 @@
 ---
-import { APP_NAME, PLAY_LIVE, PLAY_URL } from '../lib/constants';
+import { APP_NAME, PLAY_LIVE, PLAY_URL, BETA_SIGNUP_ACTIVE } from '../lib/constants';
 import MobileNav from '../islands/MobileNav.svelte';
 import ThemeToggle from '../islands/ThemeToggle.svelte';
 
@@ -11,6 +11,7 @@ const links = [
   { href: sectionHref('#screenshots'), label: 'Screenshots' },
   { href: sectionHref('#how'), label: 'How it works' },
   { href: sectionHref('#faq'), label: 'FAQ' },
+  ...(BETA_SIGNUP_ACTIVE ? [{ href: sectionHref('#beta'), label: 'Beta' }] : []),
   { href: `${base}/privacy`, label: 'Privacy' },
 ];
 ---
@@ -38,11 +39,11 @@ const links = [
     <div class="flex items-center gap-2">
       <ThemeToggle client:idle />
       <a
-        href={PLAY_LIVE ? PLAY_URL : '#download'}
+        href={PLAY_LIVE ? PLAY_URL : (BETA_SIGNUP_ACTIVE ? sectionHref('#beta') : '#download')}
         class="hidden sm:inline-flex btn btn-accent"
-        aria-disabled={!PLAY_LIVE}
+        aria-disabled={!PLAY_LIVE && !BETA_SIGNUP_ACTIVE}
       >
-        {PLAY_LIVE ? 'Get it on Google Play' : 'Coming soon'}
+        {PLAY_LIVE ? 'Get it on Google Play' : (BETA_SIGNUP_ACTIVE ? 'Join the beta' : 'Coming soon')}
       </a>
       <MobileNav client:idle links={links} />
     </div>
