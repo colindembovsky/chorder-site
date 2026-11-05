@@ -1,60 +1,77 @@
-export type Screenshot = {
-  file: string; // filename inside public/images/screenshots/
-  caption: string;
-  feature: string;
-  theme: 'dark' | 'light';
+export type ShotId =
+  | 'library'
+  | 'setlist-detail'
+  | 'setlist-editor'
+  | 'chart-short'
+  | 'chart-long'
+  | 'performance-single'
+  | 'performance-setlist'
+  | 'detect'
+  | 'planning-center';
+
+export type Shot = {
+  /** File stem in public/images/app/: `{id}-{theme}-{width}.webp` */
+  id: ShotId;
+  /** Intrinsic size of the 1600px variant. */
+  width: number;
+  height: number;
+  alt: string;
 };
 
-// Order matches §6.5.2 of the research report — most compelling first.
-export const SCREENSHOTS: Screenshot[] = [
-  {
-    file: 'chorder-performance-view.png',
-    caption:
-      'Play confidently in any key — Nashville numbers and real-time transposition, right on stage.',
-    feature: 'Performance View',
-    theme: 'dark',
+// Every shot exists in light and dark at 1600w and 800w. Alt text describes what is on screen.
+export const SHOTS: Record<ShotId, Shot> = {
+  'performance-single': {
+    id: 'performance-single',
+    width: 1600,
+    height: 1000,
+    alt: 'Chorder Performance view for Amazing Grace on a tablet. A brass block at the top right reads Play G, Capo 3. Below it, chords sit in brass above large lyrics under the heading Verse 1.',
   },
-  {
-    file: 'chorder-detect.png',
-    caption:
-      'Never lose your place — live chord detection identifies what is being played, automatically.',
-    feature: 'Live Chord Detection (experimental)',
-    theme: 'dark',
+  'performance-setlist': {
+    id: 'performance-setlist',
+    width: 1600,
+    height: 1000,
+    alt: 'Chorder Performance view for Doxology, song 1 of 5 in a setlist. The header shows Previous and Next buttons, a Next: Be Thou My Vision hint with its key, Notes and Chord map toggles, and a Play G block.',
   },
-  {
-    file: 'chorder-library.png',
-    caption: 'Your entire song catalog — searchable, taggable, instantly accessible.',
-    feature: 'Library',
-    theme: 'dark',
+  library: {
+    id: 'library',
+    width: 1600,
+    height: 1000,
+    alt: 'Chorder Library with Search, Import and Tags tabs. A search field and tag filters sit above a list of ten charts. Each row starts with a brass tile showing the song key, then the title, artist and tags.',
   },
-  {
-    file: 'chorder-set-lists.png',
-    caption: 'Build Sunday\u2019s set in seconds and launch straight into performance.',
-    feature: 'Setlists',
-    theme: 'light',
+  'setlist-detail': {
+    id: 'setlist-detail',
+    width: 1600,
+    height: 1000,
+    alt: 'Chorder setlist for Sunday morning service with five songs. A key flow line reads G, C, D, E, B flat. Numbered rows show each song with its key tile, capo and band key, and buttons for Performance view and Edit.',
   },
-  {
-    file: 'chorder-view-chart.png',
-    caption: 'Clean, readable chord charts — exactly how you need them.',
-    feature: 'Chart View',
-    theme: 'light',
+  'setlist-editor': {
+    id: 'setlist-editor',
+    width: 1600,
+    height: 1000,
+    alt: 'Chorder setlist editor. Each song row has a drag handle, a number, a key tile, an optional note such as Count in 4, and an overflow menu. Buttons at the top add a song, open Performance view or delete the setlist.',
   },
-  {
-    file: 'chorder-edit-chart.png',
-    caption: 'Import any PDF chart and fine-tune it — your edits, alongside the original.',
-    feature: 'Chart Editing',
-    theme: 'dark',
+  'chart-short': {
+    id: 'chart-short',
+    width: 1600,
+    height: 1000,
+    alt: 'Chorder chart view for Doxology. The header shows artist, tempo and time signature, a Chords and Nashville toggle, and a Play G block. The chart fills the card with brass chords above monospace lyrics.',
   },
-  {
-    file: 'chorder-themes.png',
-    caption: 'Make it yours — built-in themes or a custom look for your stage.',
-    feature: 'Themes',
-    theme: 'light',
+  'chart-long': {
+    id: 'chart-long',
+    width: 1600,
+    height: 1000,
+    alt: 'Chorder chart view for Amazing Grace. The chart text is scaled up to fill the card, with brass chords above monospace lyrics under the heading Verse 1.',
   },
-  {
-    file: 'chorder-song-meta.png',
-    caption: 'Key, tempo, tags, time signature — every detail organized your way.',
-    feature: 'Song Metadata',
-    theme: 'light',
+  detect: {
+    id: 'detect',
+    width: 1600,
+    height: 325,
+    alt: 'Chorder chord detection panel. A key selector with Major and Minor, the detected chord G in brass, and a row of brass bars showing the audio spectrum.',
   },
-];
+  'planning-center': {
+    id: 'planning-center',
+    width: 1600,
+    height: 1000,
+    alt: 'Chorder Services import connected to Planning Center. Tabs for Search songs and Browse plans, a field for song title or CCLI number, and a list of songs that have PDFs. A note says imports are local copies.',
+  },
+};

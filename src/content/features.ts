@@ -1,44 +1,48 @@
 export type Feature = {
   title: string;
   blurb: string;
-  icon: string; // lucide icon name
 };
 
+// Everything here is checked against the app's README, DESIGN.md and in-app help.
 export const FEATURES: Feature[] = [
   {
-    title: 'Import & Edit',
+    title: 'Chords or Nashville numbers',
     blurb:
-      'Drop in PDFs and Chorder turns them into editable charts. Drag chords, fix lyrics, tweak meta — make every chart truly yours.',
-    icon: 'file-text',
+      'Switch a chart between chord names and Nashville numbers. In Performance view, a Chord map reference opens from the header.',
   },
   {
-    title: 'Searchable Library',
+    title: 'Key and capo per song',
     blurb:
-      'Find any chart in seconds by title, artist, key, lyric, or tag. Group songs by service, team, season, or style.',
-    icon: 'library',
+      'Set a band key and a capo for each song in a setlist. The Play block shows the key to play and the capo, and the chart follows.',
   },
   {
-    title: 'Nashville Numbers',
+    title: 'Edit any chart',
     blurb:
-      'One tap toggles between chord names and Nashville numbers. Transpose to any key — capo-aware, every time.',
-    icon: 'hash',
+      'Drag a chord along the lyric, long-press to change it, long-press a gap to add one, and mark section headings. Show the original PDF under the editable chart.',
   },
   {
-    title: 'Setlists',
+    title: 'Planning Center Services',
     blurb:
-      'Build a setlist in seconds. Reorder songs, override key and capo per song, add performance notes.',
-    icon: 'list-ordered',
+      'Connect your account, search by title or CCLI number or browse a plan, and import its PDF charts. Imports are local copies; Chorder never edits Services. Your church\u2019s subscriptions and permissions still apply.',
   },
   {
-    title: 'Performance View',
+    title: 'Chord detection (experimental)',
     blurb:
-      'A clean, distraction-free, full-screen live view. Quick prev/next, controls overlay, Nashville reference at a glance.',
-    icon: 'play-circle',
+      'Listens through the microphone and shows the chord it hears, with a spectrum. Audio is processed on the device and never recorded or uploaded.',
   },
   {
-    title: 'Live Chord Detection',
+    title: 'Backup and restore',
     blurb:
-      'Experimental: Chorder listens through the mic and identifies what is being played, in real time, on stage.',
-    icon: 'mic',
+      'Export your charts, notes, annotations, setlists and tags to a JSON file. Restore by adding copies, skipping existing songs, or replacing the library. Original PDFs and settings are not included, and the file is not encrypted.',
+  },
+  {
+    title: 'Light and dark themes',
+    blurb:
+      'Built-in light and dark themes, plus a theme editor. Text is set in Atkinson Hyperlegible, with 48dp touch targets.',
+  },
+  {
+    title: 'Screen-reader semantics',
+    blurb:
+      'The Play key is read first, song rows speak as one phrase, and the drag handle has Move up and Move down actions.',
   },
 ];
