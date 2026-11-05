@@ -1,82 +1,44 @@
 ---
-import { APP_NAME, APP_TAGLINE, APP_SUBHEAD, PLAY_LIVE, PLAY_URL, BETA_SIGNUP_ACTIVE } from '../lib/constants';
+import { APP_NAME, APP_SUBHEAD, PLAY_LIVE, PLAY_URL } from '../lib/constants';
+import AppShot from './AppShot.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<section class="relative isolate overflow-hidden" style="background-color: #0a0a0a;">
-  {/* Background: cover photo + dark vertical gradient (mirrors in-app splash) */}
-  <div class="absolute inset-0 z-0">
-    <img
-      src={`${base}/images/cover.png`}
-      alt=""
-      class="w-full h-full object-cover"
-      fetchpriority="high"
-      decoding="async"
+{/*
+  THESIS: A calm lead sheet on a music stand. The page opens on the real Performance view
+  and answers one question first: what do I play?
+  TYPE: Atkinson Hyperlegible Next only. Heavy display, regular body.
+  COLOUR: slate chrome; brass only for the key, the Play block and the primary action.
+  LAYOUT: flat sections with hairlines; screenshots in a tablet frame; no card grids.
+  MOTION: hero settles in once; reduced motion removes it.
+*/}
+<section class="pt-12 pb-14 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24">
+  <div class="container-x grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-14 items-center">
+    <div class="rise">
+      <h1 class="h-display">Know what to play before the count-in.</h1>
+      <p class="lede mt-6">{APP_SUBHEAD}</p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        {PLAY_LIVE ? (
+          <a href={PLAY_URL} class="btn btn-brass">Get it on Google Play</a>
+        ) : (
+          <span class="btn btn-status">Coming soon to Google Play</span>
+        )}
+        <a href="#features" class="btn btn-quiet">See how it works</a>
+      </div>
+
+      <ul class="mt-8 flex flex-wrap gap-x-5 gap-y-1 text-[0.9375rem] text-muted list-none p-0">
+        <li>Android 8.0 and newer</li>
+        <li>No account</li>
+        <li>No ads or analytics</li>
+      </ul>
+    </div>
+
+    <AppShot
+      id="performance-single"
+      eager
+      sizes="(min-width: 1024px) 58vw, 100vw"
+      class="rise rise-2"
     />
-    <div class="absolute inset-0 hero-gradient"></div>
-    <div class="hero-aurora" aria-hidden="true"></div>
   </div>
-
-  <div class="container-x relative z-10 pt-20 pb-28 sm:pt-28 sm:pb-36 lg:pt-36 lg:pb-44 text-center">
-    <div class="logo-glow inline-block float-slow">
-      <img
-        src={`${base}/images/logo.png`}
-        alt=""
-        width="160"
-        height="160"
-        class="h-28 w-28 sm:h-36 sm:w-36 rounded-2xl shadow-2xl object-cover"
-        loading="eager"
-        decoding="async"
-      />
-    </div>
-
-    <h1 class="display text-gradient-accent mt-8 text-5xl sm:text-6xl lg:text-7xl">
-      {APP_NAME}
-    </h1>
-    <p class="mt-4 text-lg sm:text-xl font-medium tracking-wide" style="color: #E0D9C8; opacity: 0.92;">
-      {APP_TAGLINE}
-    </p>
-    <p class="mx-auto mt-6 max-w-2xl text-base sm:text-lg text-white/85 leading-relaxed">
-      {APP_SUBHEAD}
-    </p>
-
-    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-      {PLAY_LIVE ? (
-        <a
-          href={PLAY_URL}
-          aria-label="Get Chorder on Google Play"
-          class="inline-block transition-transform hover:-translate-y-0.5"
-        >
-          <img
-            src={`${base}/images/google-play-badge.svg`}
-            alt="Get it on Google Play"
-            height="60"
-            width="202"
-            class="h-14 sm:h-[60px] w-auto"
-          />
-        </a>
-      ) : BETA_SIGNUP_ACTIVE ? (
-        <a
-          href="#beta"
-          class="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white/90 bg-white/5 backdrop-blur hover:bg-white/10 transition-colors"
-        >
-          <span class="inline-block h-2 w-2 rounded-full bg-accent animate-pulse"></span>
-          Join the beta
-        </a>
-      ) : (
-        <span
-          class="inline-flex items-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-white/90 bg-white/5 backdrop-blur"
-        >
-          <span class="inline-block h-2 w-2 rounded-full bg-accent animate-pulse"></span>
-          Coming soon to Google Play
-        </span>
-      )}
-      <a href="#features" class="btn btn-ghost text-white border-white/30 hover:bg-white/10">
-        See what it does
-      </a>
-    </div>
-  </div>
-
-  {/* Bottom fade into page bg */}
-  <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-bg pointer-events-none"></div>
 </section>

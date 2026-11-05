@@ -1,0 +1,133 @@
+---
+import AppShot from './AppShot.astro';
+import { FEATURES } from '../content/features';
+---
+<div id="features">
+  {/* Library and imports */}
+  <section class="band" aria-labelledby="library-h">
+    <div class="container-x chapter">
+      <div class="chapter-text">
+        <h2 id="library-h" class="h-section">Bring your charts in, then find them fast.</h2>
+        <p class="lede mt-5">
+          Every import opens in a review step before it is saved, and every saved chart is editable.
+        </p>
+        <ul class="rule-list">
+          <li><strong>PDF files.</strong> Pick one or more. Text PDFs are read directly; scans use on-device text recognition.</li>
+          <li><strong>Planning Center Services.</strong> Import from your Services library.</li>
+          <li><strong>A web page.</strong> Paste a public page with lyrics or chords.</li>
+        </ul>
+        <p class="mt-6 text-muted measure">
+          Search the Library by title, artist or tag, filter by tag chips, and sort. Each row leads with the song&rsquo;s key.
+        </p>
+      </div>
+      <div class="chapter-media">
+        <AppShot id="library" />
+      </div>
+    </div>
+  </section>
+
+  {/* Planning Center */}
+  <section class="band" aria-labelledby="pco-h">
+    <div class="container-x chapter chapter--flip">
+      <div class="chapter-text">
+        <h2 id="pco-h" class="h-section">Pull a whole plan from Planning Center.</h2>
+        <p class="lede mt-5">
+          Connect your account, search by title or CCLI number, or browse a plan to see its songs in service order.
+        </p>
+        <ul class="rule-list">
+          <li>Only songs with downloadable PDFs are listed. Plans use the assigned arrangement and key.</li>
+          <li><strong>Import all</strong> saves a plan&rsquo;s PDF charts, and asks Overwrite, Create copy or Skip for songs you already have.</li>
+          <li>Imports are local copies. Chorder does not edit songs or plans in Services, and your church&rsquo;s subscriptions and permissions still apply.</li>
+        </ul>
+      </div>
+      <div class="chapter-media">
+        <AppShot id="planning-center" />
+      </div>
+    </div>
+  </section>
+
+  {/* Setlists */}
+  <section class="band" aria-labelledby="set-h">
+    <div class="container-x chapter">
+      <div class="chapter-text">
+        <h2 id="set-h" class="h-section">Build the set and see its keys at a glance.</h2>
+        <p class="lede mt-5">
+          Add songs from the Library, then set each song&rsquo;s key and capo. The setlist shows the key flow along the top.
+        </p>
+        <p class="keyflow" role="img" aria-label="Key flow from the example setlist: G, C, D, E, B flat">
+          <span class="key-tile" aria-hidden="true">G</span><span class="keyflow-arrow" aria-hidden="true">&rarr;</span>
+          <span class="key-tile" aria-hidden="true">C</span><span class="keyflow-arrow" aria-hidden="true">&rarr;</span>
+          <span class="key-tile" aria-hidden="true">D</span><span class="keyflow-arrow" aria-hidden="true">&rarr;</span>
+          <span class="key-tile" aria-hidden="true">E</span><span class="keyflow-arrow" aria-hidden="true">&rarr;</span>
+          <span class="key-tile" aria-hidden="true">B&#9837;</span>
+        </p>
+        <ul class="rule-list">
+          <li><strong>Reorder</strong> with the drag handle, or use Move up and Move down from the row menu.</li>
+          <li><strong>Notes</strong> stay with the song in that setlist, such as &ldquo;Count in 4. Everyone in.&rdquo;</li>
+          <li>Create a setlist from selected Library songs, in the order you picked them.</li>
+        </ul>
+      </div>
+      <div class="chapter-media">
+        <AppShot id="setlist-detail" />
+        <AppShot id="setlist-editor" />
+      </div>
+    </div>
+  </section>
+
+  {/* Performance */}
+  <section class="band" aria-labelledby="play-h">
+    <div class="container-x chapter chapter--flip">
+      <div class="chapter-text">
+        <h2 id="play-h" class="h-section">Play it. One header band, one thing to read first.</h2>
+        <p class="lede mt-5">
+          Performance view opens each song with the key and capo to play, then your chart, scaled to fill the screen.
+        </p>
+        <div class="playblock" aria-hidden="true">
+          <span class="pb-label">Play</span><span class="pb-key">G</span><span class="pb-capo">Capo 3</span>
+        </div>
+        <ul class="rule-list">
+          <li>The header shows the title, your position in the set (&ldquo;1 of 5&rdquo;) and what is next.</li>
+          <li>Previous and Next step through the set. Notes and Chord map open from the header.</li>
+          <li>The screen stays awake while you are in Performance view.</li>
+        </ul>
+      </div>
+      <div class="chapter-media">
+        <AppShot id="performance-setlist" />
+      </div>
+    </div>
+  </section>
+
+  {/* Themes */}
+  <section class="band" aria-labelledby="themes-h">
+    <div class="container-x">
+      <div class="max-w-2xl">
+        <h2 id="themes-h" class="h-section">Light for the rehearsal room. Dark for the stage.</h2>
+        <p class="lede mt-5">
+          Charts keep chords in brass and lyrics in large, even type in both themes. The screenshots on this page follow the theme switch in the header.
+        </p>
+      </div>
+      <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+        <AppShot id="chart-short" theme="light" sizes="(min-width: 768px) 46vw, 100vw" caption="Light theme: chart view for Doxology." />
+        <AppShot id="chart-short" theme="dark" sizes="(min-width: 768px) 46vw, 100vw" caption="Dark theme: the same chart." />
+      </div>
+    </div>
+  </section>
+
+  {/* Everything else */}
+  <section class="band" aria-labelledby="more-h">
+    <div class="container-x">
+      <h2 id="more-h" class="h-section max-w-2xl">Also in the app</h2>
+      <ul class="spec">
+        {FEATURES.map((f) => (
+          <li>
+            <h3>{f.title}</h3>
+            <p>{f.blurb}</p>
+          </li>
+        ))}
+      </ul>
+      <div class="mt-12 max-w-3xl">
+        <AppShot id="detect" framed={false} sizes="(min-width: 768px) 48rem, 100vw" caption="Chord detection panel (experimental): key, detected chord and spectrum." />
+      </div>
+    </div>
+  </section>
+</div>

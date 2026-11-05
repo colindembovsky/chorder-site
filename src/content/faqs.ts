@@ -3,30 +3,34 @@ export type FAQ = { q: string; a: string };
 export const FAQS: FAQ[] = [
   {
     q: 'What devices does Chorder run on?',
-    a: 'Chorder runs on Android phones and tablets running Android 8.0 (Oreo) or newer. It is optimized for tablet-size screens on a music stand.',
+    a: 'Android 8.0 (Oreo) or newer. It is designed for tablets on a music stand, so the layouts are built around a large screen.',
   },
   {
-    q: 'Does Chorder need an internet connection?',
-    a: 'No. Chorder works entirely on your device. There is no account, no cloud sync, and your charts, library, and microphone audio never leave your device.',
-  },
-  {
-    q: 'How does PDF import work?',
-    a: 'Pick one or more PDFs and Chorder parses them into editable charts. From there you can edit the chart in Chorder — drag chords over lyrics, fix labels, add sections, tweak meta — to make it truly yours.',
+    q: 'Where do my charts come from?',
+    a: 'You import them. Pick one or more PDF charts, pull songs from Planning Center Services, or paste a public web page with lyrics or chords. Each import opens in a review step before it is saved. Scanned PDFs are read with on-device text recognition.',
   },
   {
     q: 'Can I edit a chart after I import it?',
-    a: 'Yes. Every imported chart is fully editable in Chorder. Reposition chords, adjust lyrics, rename sections, set the key and capo — your changes are saved with the song.',
+    a: 'Yes. Every chart is editable. Drag chords along the lyric, change or add chords, mark section headings, and edit the name, author, key, tempo, time signature and tags.',
   },
   {
     q: 'Can I transpose songs and use a capo?',
-    a: 'Yes. Set a band key and a target key per song, with capo-aware display. Switch between chord names and Nashville numbers with one tap.',
+    a: 'Yes. In a setlist, each song has its own target key and capo, and the Play block shows the key to play. A chart can be shown with chord names or Nashville numbers.',
+  },
+  {
+    q: 'Does it work without an internet connection?',
+    a: 'Your library, setlists and Performance view are stored on the device and work offline, with no account. The internet is used when you import from Planning Center or from a web page.',
+  },
+  {
+    q: 'How do I back up my library?',
+    a: 'Export a backup from Settings. It is a JSON file with your charts, notes, annotations, setlists and tags. Original PDFs and settings are not included, and the file is not encrypted.',
   },
   {
     q: 'How much does Chorder cost?',
-    a: 'Chorder is currently in prototype and not yet listed on the Play Store. Pricing will be announced ahead of public launch.',
+    a: 'The Google Play listing shows the current price. Chorder has no account, advertising or analytics.',
   },
   {
     q: 'What about my privacy?',
-    a: 'Chorder has no advertising, no analytics, and no telemetry. Microphone audio used for live chord detection is processed on-device and is never recorded or uploaded.',
+    a: 'There is no account, advertising or analytics. Microphone audio used for chord detection, which is experimental, is processed on the device and is never recorded or uploaded. The privacy policy has the details.',
   },
 ];

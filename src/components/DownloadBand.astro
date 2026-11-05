@@ -1,0 +1,23 @@
+---
+import { APP_NAME, PLAY_LIVE, PLAY_URL } from '../lib/constants';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<section id="get" class="band" aria-labelledby="get-h">
+  <div class="container-x grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-center">
+    <div>
+      <h2 id="get-h" class="h-section">Get {APP_NAME} on Google Play.</h2>
+      <p class="lede mt-5">
+        For Android 8.0 and newer, built for tablets. No account to create. See the
+        <a href={`${base}/privacy`} class="link">privacy policy</a> for what the app does with your data.
+      </p>
+    </div>
+    {PLAY_LIVE ? (
+      <a href={PLAY_URL} aria-label={`Get ${APP_NAME} on Google Play`} class="inline-block justify-self-start md:justify-self-end">
+        <img src={`${base}/images/google-play-badge.svg`} alt="Get it on Google Play" height="60" width="202" class="h-14 w-auto" loading="lazy" />
+      </a>
+    ) : (
+      <span class="btn btn-status">Coming soon to Google Play</span>
+    )}
+  </div>
+</section>
