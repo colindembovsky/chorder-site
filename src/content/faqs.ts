@@ -7,7 +7,7 @@ export const FAQS: FAQ[] = [
   },
   {
     q: 'Where do my charts come from?',
-    a: 'You import them. Pick one or more PDF charts, pull songs from Planning Center Services, or paste a public web page with lyrics or chords. Each import opens in a review step before it is saved. Scanned PDFs are read with on-device text recognition.',
+    a: 'You import them. Pick one or more PDF charts, open a PDF from another app, pull songs from Planning Center Services, or paste a public web page with lyrics or chords. Each import opens in a review step before it is saved. Scanned PDFs are read with on-device text recognition.',
   },
   {
     q: 'Can I edit a chart after I import it?',
@@ -23,7 +23,11 @@ export const FAQS: FAQ[] = [
   },
   {
     q: 'How do I back up my library?',
-    a: 'Export a backup from Settings. It is a JSON file with your charts, notes, annotations, setlists and tags. Original PDFs and settings are not included, and the file is not encrypted.',
+    a: 'Open Settings > Library and choose Export backup. You get one JSON file, saved wherever you pick with Android\u2019s file picker, including a document provider such as Google Drive. It holds your charts, edits, notes, annotations, tags and setlists. To restore, add the songs as copies, skip songs you already have, or replace the library, which asks you to confirm. Original PDFs and app settings are not included, and the file is not encrypted.',
+  },
+  {
+    q: 'Does it work with a screen reader?',
+    a: 'Chorder has TalkBack support. Chords are spoken as names, so F#m7/A is read as \u201cF sharp m7 over A\u201d, followed by the lyric. Setlist rows can be reordered with Move up and Move down actions as well as by dragging.',
   },
   {
     q: 'How much does Chorder cost?',

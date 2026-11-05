@@ -7,7 +7,8 @@ export type ShotId =
   | 'performance-single'
   | 'performance-setlist'
   | 'detect'
-  | 'planning-center';
+  | 'planning-center'
+  | 'settings-themes';
 
 export type Shot = {
   /** File stem in public/images/app/: `{id}-{theme}-{width}.webp` */
@@ -73,5 +74,11 @@ export const SHOTS: Record<ShotId, Shot> = {
     width: 1600,
     height: 1000,
     alt: 'Chorder Services import connected to Planning Center. Tabs for Search songs and Browse plans, a field for song title or CCLI number, and a list of songs that have PDFs. A note says imports are local copies.',
+  },
+  'settings-themes': {
+    id: 'settings-themes',
+    width: 1600,
+    height: 1000,
+    alt: 'Chorder Settings on the Appearance tab, with Performance, Appearance, Library and Help tabs. A list of themes (System, Chorder Dark, Chorder Light and two custom copies) sits beside a theme editor with a preview of chords in brass above the lyric Amazing grace how sweet the sound.',
   },
 };
