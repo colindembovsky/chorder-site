@@ -114,7 +114,7 @@ Small, even radii: 8–10px for controls and tiles, 14px for the Play block, a f
 
 ## Components
 
-- **Button (`.btn`)**: 48px minimum height, 700 weight. `btn-brass` is the single primary action ("Join the beta"); `btn-quiet` is outlined; `btn-status` is the non-link "coming soon" state.
+- **Button (`.btn`)**: 48px minimum height, 700 weight. `btn-brass` is the single primary action ("Get it on Google Play"); `btn-quiet` is outlined; `btn-status` is the non-link fallback when `PLAY_LIVE` is false.
 - **Header**: sticky and solid with a hairline bottom border. Mobile menu is a non-modal disclosure panel that closes on Escape.
 - **Device (`.device`, `AppShot`)**: bezel, `srcset` of 800 and 1600 webp, light and dark variants swapped by CSS (`.shot-light`, `.shot-dark`), required `alt`. These classes live outside `@layer` so Tailwind does not purge them.
 - **Key flow tiles (`.key-tile`)**: HTML, `aria-hidden`, illustrating per-song keys in a setlist.

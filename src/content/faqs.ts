@@ -27,7 +27,7 @@ export const FAQS: FAQ[] = [
   },
   {
     q: 'How much does Chorder cost?',
-    a: 'Chorder is in beta and not yet listed on Google Play. Pricing will be announced before public launch.',
+    a: 'The Google Play listing shows the current price. Chorder has no account, advertising or analytics.',
   },
   {
     q: 'What about my privacy?',

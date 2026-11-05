@@ -59,7 +59,7 @@ python3 scripts/optimise-screenshots.py /path/to/chorder/ui-review
 
 ## Going live on Google Play
 
-Set `PLAY_LIVE` to `true` in `src/lib/constants.ts` when the listing is published. The "Join the beta" calls to action become the Google Play badge.
+`PLAY_LIVE` in `src/lib/constants.ts` is `true` now that the listing is published. The Get it on Google Play calls to action (header, hero, download band) are shown when it is `true`; otherwise a "Coming soon" state is shown.
 
 ## Deployment
 

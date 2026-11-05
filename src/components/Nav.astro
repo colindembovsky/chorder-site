@@ -1,5 +1,5 @@
 ---
-import { APP_NAME, PLAY_LIVE, PLAY_URL, BETA_SIGNUP_ACTIVE } from '../lib/constants';
+import { APP_NAME, PLAY_LIVE, PLAY_URL } from '../lib/constants';
 import MobileNav from '../islands/MobileNav.svelte';
 import ThemeToggle from '../islands/ThemeToggle.svelte';
 
@@ -9,14 +9,9 @@ const sectionHref = (hash: string) => `${siteRoot}${hash}`;
 const links = [
   { href: sectionHref('#features'), label: 'Features' },
   { href: sectionHref('#faq'), label: 'FAQ' },
-  ...(BETA_SIGNUP_ACTIVE ? [{ href: sectionHref('#beta'), label: 'Beta' }] : []),
   { href: `${base}/privacy`, label: 'Privacy' },
 ];
-const cta = PLAY_LIVE
-  ? { href: PLAY_URL, label: 'Get it on Google Play' }
-  : BETA_SIGNUP_ACTIVE
-    ? { href: sectionHref('#beta'), label: 'Join the beta' }
-    : null;
+const cta = PLAY_LIVE ? { href: PLAY_URL, label: 'Get it on Google Play' } : null;
 ---
 <header class="site-header">
   <div class="container-x flex items-center justify-between h-16">

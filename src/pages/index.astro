@@ -4,13 +4,12 @@ import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
 import PrivacyBand from '../components/PrivacyBand.astro';
 import FAQSection from '../components/FAQSection.astro';
-import BetaSignup from '../components/BetaSignup.astro';
-import { BETA_SIGNUP_ACTIVE } from '../lib/constants';
+import DownloadBand from '../components/DownloadBand.astro';
 ---
 <Base>
   <Hero />
   <Features />
   <PrivacyBand />
   <FAQSection />
-  {BETA_SIGNUP_ACTIVE && <BetaSignup />}
+  <DownloadBand />
 </Base>

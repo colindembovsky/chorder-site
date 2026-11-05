@@ -15,7 +15,7 @@ Web. A static marketing site (Astro, GitHub Pages) for an Android tablet app. De
 
 ## Product Purpose
 
-Chorder turns imported song charts into editable, key-aware charts and setlists, and plays them live with the key and capo to play shown first. The site's job is to get a visitor to join the beta (the Play listing is not live yet) by showing the real app and describing exactly what it does.
+Chorder turns imported song charts into editable, key-aware charts and setlists, and plays them live with the key and capo to play shown first. The site's job is to get a visitor to install Chorder from Google Play by showing the real app and describing exactly what it does.
 
 ## Positioning
 
@@ -23,7 +23,7 @@ A calm, capable, stage-ready tool. Not a generic "songbook" app and not a card-h
 
 ## Operating Context
 
-- Beta sign-up is an embedded Tally form; `PLAY_LIVE` is false until the Play listing exists.
+- The Play listing is live (`PLAY_LIVE = true`); the primary action is the Google Play link.
 - The app's v1.1.0 redesign (slate chrome, brass accent, Atkinson Hyperlegible) is the identity the site should echo without copying screens one for one.
 - Hosted at chorder.thekingdomofcode.com via GitHub Pages.
 
@@ -44,7 +44,7 @@ A calm, capable, stage-ready tool. Not a generic "songbook" app and not a card-h
 
 - Fresh 2560x1600 screenshots of the shipped UI in light and dark.
 - The app's README, PRODUCT.md and DESIGN.md.
-- The previous site's content and links (privacy page, support email, beta form).
+- The previous site's content and links (privacy page, support email).
 
 ## Product Principles
 

@@ -1,5 +1,5 @@
 ---
-import { APP_NAME, APP_SUBHEAD, PLAY_LIVE, PLAY_URL, BETA_SIGNUP_ACTIVE } from '../lib/constants';
+import { APP_NAME, APP_SUBHEAD, PLAY_LIVE, PLAY_URL } from '../lib/constants';
 import AppShot from './AppShot.astro';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -20,11 +20,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
       <div class="mt-8 flex flex-wrap items-center gap-4">
         {PLAY_LIVE ? (
-          <a href={PLAY_URL} aria-label={`Get ${APP_NAME} on Google Play`} class="inline-block">
-            <img src={`${base}/images/google-play-badge.svg`} alt="Get it on Google Play" height="60" width="202" class="h-14 w-auto" />
-          </a>
-        ) : BETA_SIGNUP_ACTIVE ? (
-          <a href="#beta" class="btn btn-brass">Join the beta</a>
+          <a href={PLAY_URL} class="btn btn-brass">Get it on Google Play</a>
         ) : (
           <span class="btn btn-status">Coming soon to Google Play</span>
         )}
