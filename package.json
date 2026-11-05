@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/svelte": "8.1.2",
     "@astrojs/tailwind": "^6.0.2",
+    "@fontsource-variable/atkinson-hyperlegible-next": "^5.3.0",
     "astro": "6.4.3",
     "svelte": "^5.39.0",
     "tailwindcss": "^3.4.17"
