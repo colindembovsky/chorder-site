@@ -8,7 +8,7 @@ import { APP_NAME, PUBLISHER, SUPPORT_EMAIL } from '../lib/constants';
 >
   <article class="container-x py-20 prose-chorder">
     <h1 class="h-display" style="font-size: clamp(2.25rem, 1.4rem + 3.4vw, 3.5rem);">Privacy Policy</h1>
-    <p class="text-muted mt-3">Effective date: May 26, 2026</p>
+    <p class="text-muted mt-3">Effective date: November 5, 2026</p>
 
     <div class="mt-10 space-y-6 leading-relaxed">
       <p>
@@ -29,7 +29,7 @@ import { APP_NAME, PUBLISHER, SUPPORT_EMAIL } from '../lib/constants';
         this may include:
       </p>
       <ul class="list-disc pl-6 space-y-1">
-        <li>PDF files or other chart files you choose to import.</li>
+        <li>PDF files, web pages, or Planning Center charts you choose to import.</li>
         <li>Song titles, artists, keys, chords, lyrics, setlists, notes, tags, and edits you create in the app.</li>
         <li>App preferences such as theme choices and display settings.</li>
       </ul>
@@ -58,29 +58,62 @@ import { APP_NAME, PUBLISHER, SUPPORT_EMAIL } from '../lib/constants';
         The app does not use these features to transmit your chart contents or audio to {PUBLISHER}.
       </p>
 
-      <h2 class="mt-12 text-2xl font-bold">Beta sign-up</h2>
+      <h2 class="mt-12 text-2xl font-bold">Planning Center Services import</h2>
       <p>
-        If you choose to join the {APP_NAME} beta, you can submit your email address through the
-        sign-up form on our website. We use this email address only to contact you about beta
-        access and {APP_NAME} updates. You can unsubscribe or ask us to delete your address at any
-        time by contacting {PUBLISHER} at
-        <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+        If you choose to import from Planning Center Services, {APP_NAME} connects to your
+        Planning Center account over the internet. You sign in and approve access in your browser
+        on Planning Center&rsquo;s own pages; {APP_NAME} does not see or store your password.
       </p>
       <p>
-        The sign-up form is provided by Tally (Tally BV), which stores submissions on our behalf as
-        a data processor. Your use of the form is also subject to Tally's privacy policy.
+        {APP_NAME} reads the songs, arrangements, plans and PDF attachments your account can
+        access, and downloads the charts you choose to import. Planning Center may record that an
+        attachment was opened. {APP_NAME} does not edit songs, arrangements or plans in Services.
+        Requests go directly from your device to Planning Center, not through {PUBLISHER} servers.
+      </p>
+      <p>
+        The access and refresh tokens that keep you signed in are encrypted with the Android
+        Keystore and stored in a private area of the app that is excluded from Android backup.
+        Disconnecting in the app clears them from your device. It does not revoke the
+        authorization in Planning Center; you can do that from your Planning Center account.
+        Charts you imported stay on your device as local copies. Planning Center&rsquo;s own privacy policy governs the
+        information it holds.
+      </p>
+
+      <h2 class="mt-12 text-2xl font-bold">Web-page import</h2>
+      <p>
+        If you choose to import a chart from a web page, {APP_NAME} requests the address you
+        entered directly from your device. The site that hosts the page can see that request, as
+        with any web browser. The page is converted into an editable chart on your device and
+        saved locally. {PUBLISHER} does not receive the address or the page.
+      </p>
+
+      <h2 class="mt-12 text-2xl font-bold">Library backup files</h2>
+      <p>
+        In Settings you can export your library to a file and restore it later. Exporting and
+        restoring happen only when you choose them, using Android&rsquo;s file picker, and you
+        decide where the file is saved or sent, for example local storage or a cloud document
+        provider you have set up. {PUBLISHER} does not receive backup files.
+      </p>
+      <p>
+        A backup contains your saved charts (including edits, keys, capo, metadata and tags),
+        notes, annotations, and setlists. It does not contain original PDFs, app settings, or
+        Planning Center sign-in details. The file is not encrypted, so anyone who can open it can
+        read your charts and notes. Choose where to store or share it accordingly.
       </p>
 
       <h2 class="mt-12 text-2xl font-bold">Information shared with third parties</h2>
       <p>
         {APP_NAME} does not sell your information and does not share your imported charts, app
-        library, notes, or microphone audio with third parties.
+        library, notes, or microphone audio with third parties. The only network connections the
+        app makes are the ones described above: to Planning Center when you use Services import,
+        and to a web page when you import from its address.
       </p>
       <p>
         Some app functionality uses Android platform services and libraries on your device, such as
-        file picking, local storage, and on-device text recognition. Your use of Google Play and
-        Android device services is also subject to Google’s privacy policies and your device
-        settings.
+        file picking, local storage, and on-device text recognition. The app can also ask Google
+        Play to show its in-app review prompt or open the Play Store listing so you can rate it.
+        Your use of Google Play and Android device services is also subject to Google’s privacy
+        policies and your device settings.
       </p>
 
       <h2 class="mt-12 text-2xl font-bold">Device backup and transfer</h2>
