@@ -1,16 +1,19 @@
 ---
 import { FAQS } from '../content/faqs';
-import FAQ from '../islands/FAQ.svelte';
 ---
-<section id="faq" class="py-20 sm:py-28 border-t border-border">
-  <div class="container-x grid md:grid-cols-[1fr_1.4fr] gap-12 items-start">
-    <div>
-      <p class="eyebrow">FAQ</p>
-      <h2 class="display text-3xl sm:text-4xl mt-2">Questions, answered.</h2>
-      <p class="mt-4 text-text/75">
-        Anything else? Drop us a line — see the footer.
-      </p>
+<section id="faq" class="band" aria-labelledby="faq-h">
+  <div class="container-x grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+    <h2 id="faq-h" class="h-section lg:col-span-4">Questions</h2>
+    <div class="faq lg:col-span-8">
+      {FAQS.map((f, i) => (
+        <details name="faq" open={i === 0}>
+          <summary>
+            <span>{f.q}</span>
+            <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </summary>
+          <p class="faq-a">{f.a}</p>
+        </details>
+      ))}
     </div>
-    <div class="reveal"><FAQ client:visible items={FAQS} /></div>
   </div>
 </section>

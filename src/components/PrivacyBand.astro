@@ -1,25 +1,19 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<section class="py-20 sm:py-24 border-y border-border" style="background: var(--c-surface); color: var(--c-text);">
-  <div class="container-x grid md:grid-cols-[auto_1fr] gap-8 items-center">
-    <div class="h-16 w-16 rounded-2xl flex items-center justify-center shrink-0"
-         style="background: color-mix(in srgb, var(--c-accent) 18%, transparent); color: var(--c-accent);">
-      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
-           fill="none" stroke="currentColor" stroke-width="1.8"
-           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
-        <path d="m9 12 2 2 4-4"/>
-      </svg>
-    </div>
-    <div>
-      <p class="eyebrow" style="color: var(--c-accent);">Private by design</p>
-      <h2 class="display text-2xl sm:text-3xl mt-2">
-        Your charts, microphone audio, and library never leave your device.
-      </h2>
-      <p class="mt-3 text-text/75 max-w-3xl">
-        Chorder is designed to work on your device. No account. No advertising. No analytics.
-        No data uploads.
+<section class="band" aria-labelledby="privacy-h" style="background: rgb(var(--surface));">
+  <div class="container-x grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-16">
+    <div class="lg:col-span-6">
+      <h2 id="privacy-h" class="h-section">Your library stays on your device.</h2>
+      <p class="lede mt-5">
+        There is no account, no advertising and no analytics. Charts, setlists and notes are stored on the tablet.
       </p>
     </div>
+    <ul class="rule-list lg:col-span-6 lg:mt-0 self-center">
+      <li><strong>Microphone audio</strong> for chord detection is processed on the device and is never recorded or uploaded.</li>
+      <li><strong>Importing</strong> from Planning Center or a web page needs an internet connection.</li>
+      <li><strong>Backups</strong> are a file you export yourself. Chorder does not sync.</li>
+      <li>Read the <a href={`${base}/privacy`} class="link">full privacy policy</a>.</li>
+    </ul>
   </div>
 </section>

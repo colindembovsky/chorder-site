@@ -5,46 +5,40 @@ import ThemeToggle from '../islands/ThemeToggle.svelte';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const siteRoot = base ? `${base}/` : '/';
-const sectionHref = (hash) => `${siteRoot}${hash}`;
+const sectionHref = (hash: string) => `${siteRoot}${hash}`;
 const links = [
   { href: sectionHref('#features'), label: 'Features' },
-  { href: sectionHref('#screenshots'), label: 'Screenshots' },
-  { href: sectionHref('#how'), label: 'How it works' },
   { href: sectionHref('#faq'), label: 'FAQ' },
   ...(BETA_SIGNUP_ACTIVE ? [{ href: sectionHref('#beta'), label: 'Beta' }] : []),
   { href: `${base}/privacy`, label: 'Privacy' },
 ];
+const cta = PLAY_LIVE
+  ? { href: PLAY_URL, label: 'Get it on Google Play' }
+  : BETA_SIGNUP_ACTIVE
+    ? { href: sectionHref('#beta'), label: 'Join the beta' }
+    : null;
 ---
-<header class="sticky top-0 z-40 backdrop-blur-md bg-bg/75 border-b border-border">
+<header class="site-header">
   <div class="container-x flex items-center justify-between h-16">
-    <a href={`${base}/`} class="flex items-center gap-2.5 group" aria-label={`${APP_NAME} home`}>
+    <a href={`${base}/`} class="flex items-center gap-3 no-underline" aria-label={`${APP_NAME} home`}>
       <img
         src={`${base}/images/logo.png`}
         alt=""
-        width="32"
-        height="32"
-        class="h-8 w-8 rounded-md object-cover"
-        loading="eager"
+        width="36"
+        height="36"
+        class="h-9 w-9 rounded-lg object-cover"
         decoding="async"
       />
-      <span class="font-display font-bold text-lg tracking-tight">{APP_NAME}</span>
+      <span class="font-extrabold text-xl tracking-tight">{APP_NAME}</span>
     </a>
 
-    <nav aria-label="Primary" class="hidden md:flex items-center gap-7 text-sm text-text/80">
-      {links.map((l) => (
-        <a href={l.href} class="hover:text-text transition-colors">{l.label}</a>
-      ))}
+    <nav aria-label="Primary" class="hidden md:flex items-center gap-6">
+      {links.map((l) => <a href={l.href} class="nav-link">{l.label}</a>)}
     </nav>
 
     <div class="flex items-center gap-2">
       <ThemeToggle client:idle />
-      <a
-        href={PLAY_LIVE ? PLAY_URL : (BETA_SIGNUP_ACTIVE ? sectionHref('#beta') : '#download')}
-        class="hidden sm:inline-flex btn btn-accent"
-        aria-disabled={!PLAY_LIVE && !BETA_SIGNUP_ACTIVE}
-      >
-        {PLAY_LIVE ? 'Get it on Google Play' : (BETA_SIGNUP_ACTIVE ? 'Join the beta' : 'Coming soon')}
-      </a>
+      {cta && <a href={cta.href} class="hidden sm:inline-flex btn btn-brass">{cta.label}</a>}
       <MobileNav client:idle links={links} />
     </div>
   </div>

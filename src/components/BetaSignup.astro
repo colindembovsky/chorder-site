@@ -3,21 +3,17 @@ import { APP_NAME, TALLY_FORM_ID } from '../lib/constants';
 
 const tallySrc = `https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`;
 ---
-<section id="beta" class="py-20 sm:py-28 border-t border-border">
-  <div class="container-x grid md:grid-cols-[1fr_1.2fr] gap-12 items-center">
+<section id="beta" class="band" aria-labelledby="beta-h">
+  <div class="container-x grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-12 items-center">
     <div>
-      <p class="eyebrow">Beta</p>
-      <h2 class="display text-3xl sm:text-4xl mt-2">
-        Help shape <span class="text-gradient-accent">{APP_NAME}</span>
-      </h2>
-      <p class="mt-4 text-text/75 text-lg">
-        Want early access? Drop your email and we'll invite you to the beta. We'll only use
-        it to send {APP_NAME} beta updates — no spam, unsubscribe anytime. See our
-        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/privacy`} class="text-accent hover:underline">Privacy Policy</a>.
+      <h2 id="beta-h" class="h-section">Try {APP_NAME} in the beta.</h2>
+      <p class="lede mt-5">
+        Drop your email and we&rsquo;ll invite you. We only use it to send {APP_NAME} beta updates, and you can unsubscribe any time. See our
+        <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/privacy`} class="link">Privacy Policy</a>.
       </p>
     </div>
 
-    <div class="reveal rounded-2xl border border-border p-2 sm:p-4" style="background: var(--c-surface);">
+    <div class="rounded-xl border border-border p-2 sm:p-4" style="background: rgb(var(--surface));">
       <iframe
         data-tally-src={tallySrc}
         loading="lazy"

@@ -18,7 +18,7 @@
 
 <button
   type="button"
-  class="inline-flex items-center justify-center h-10 w-10 rounded-full border border-border hover:bg-surface transition-colors"
+  class="icon-btn"
   aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
   title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
   onclick={toggle}
