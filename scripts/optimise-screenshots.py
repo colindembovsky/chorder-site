@@ -4,7 +4,7 @@
 Usage: python3 scripts/optimise-screenshots.py <path-to-ui-review>
 
 Expects <ui-review>/consolidated/{light|dark}-<name>.png (2560x1600) and
-<ui-review>/opus/final-{light|dark}-{detect,planning-center-connected}.png.
+<ui-review>/opus/final-{light|dark}-{detect,planning-center-connected,theme-editor}.png.
 Writes public/images/app/<name>-<theme>-{1600,800}.webp. Requires Pillow.
 """
 import os
@@ -28,6 +28,7 @@ for theme in ['light', 'dark']:
     # The detect capture is mostly empty; keep only the panel at the top.
     jobs[f'detect-{theme}'] = (f'opus/final-{theme}-detect.png', (0, 0, 2560, 520))
     jobs[f'planning-center-{theme}'] = (f'opus/final-{theme}-planning-center-connected.png', None)
+    jobs[f'settings-themes-{theme}'] = (f'opus/final-{theme}-theme-editor.png', None)
 
 for name, (rel, crop) in jobs.items():
     im = Image.open(os.path.join(src_root, rel)).convert('RGB')
